@@ -27,32 +27,30 @@ Welcome to the Recommendation Engine microservice! This service provides persona
 Build the Project
 
 bash
-Copy code
+```
 go build -o recommendation-engine main.go
-Configuration
+
+```
+### Configuration
 
 Create a .env file in the root directory and set the necessary environment variables:
 
-env
-Copy code
+```
 DATABASE_URL=postgres://username:password@localhost:5432/recommendation_db
 PORT=8080
+```
 Run the Service
-
-bash
-Copy code
+```
 ./recommendation-engine
+```
 The service will start on http://localhost:8080.
-
 API Endpoints
 GET /recommendations
 
 Retrieve recommendations for a user.
 
 Request:
-
-http
-Copy code
+```
 GET /recommendations?user_id={user_id}
 Response:
 
@@ -66,13 +64,12 @@ Copy code
   ]
 }
 POST /user/behavior
-
+```
 Submit user behavior data for recommendations.
 
 Request:
 
-http
-Copy code
+```
 POST /user/behavior
 Content-Type: application/json
 
@@ -89,36 +86,29 @@ Copy code
 {
   "status": "success"
 }
-Configuration
+```
+### Configuration
 Algorithm Configuration: Configure the recommendation algorithms in config/algorithms.json.
 Database Configuration: Update database connection settings in the .env file.
 Running with Docker
 Build the Docker Image
-
-bash
-Copy code
+```
 docker build -t recommendation-engine .
+```
 Run the Docker Container
-
-bash
-Copy code
+```
 docker run -p 8080:8080 --env-file .env recommendation-engine
-Testing
+```
+### Testing
 Run tests using:
-
-bash
-Copy code
+```
 go test ./...
-Contributing
+```
+### Contributing
 Contributions are welcome! Please open an issue or submit a pull request if you’d like to contribute.
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Contact
-For any questions or feedback, please reach out to your.email@example.com.
-
-css
-Copy code
-
-Feel free to adjust any details to better fit the specifics of your project!
+For any questions or feedback, please reach out to ivan@codprez.com.
